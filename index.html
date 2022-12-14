@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sintetizador de Voz</title>
+</head>
+<body>
+  <h1>Sintetizador de Voz</h1>
+  <h2 div class="sub">
+    <p>Digite no campo abaixo o que deverá ser lido em voz alta:</p>
+
+  </h2>
+ 
+  <input type="text" id="textInput" autofocus>
+
+
+  
+  <button onclick="speak()">FALAR</button>
+  
+ 
+  <script>
+    function speak()
+     {
+        if (!window.speechSynthesis) {
+            alert("Sorry, your browser does not support speech synthesis.");
+            return;
+          }
+      // obtém o texto a partir do elemento de entrada
+      var text = document.getElementById("textInput").value;
+      
+      // cria um novo objeto de sintetizador de voz
+      var synth = window.speechSynthesis;
+      
+      // cria um novo objeto de fala
+      var speakText = new SpeechSynthesisUtterance(text);
+      
+      // sintetiza o texto
+      synth.speak(speakText);
+    }
+
+   
+
+  </script>
+<style>
+    body {
+        background-color: hsl(175, 100%, 95%);
+        text-align: center;
+      }
+      
+      h1 {
+        font-family: initial;
+        font-size: 30px;
+        
+        margin: 0 auto;
+        display: block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+          }
+      
+      .sub{
+        font-family:Impact, 'Arial Narrow Bold',;
+        font-size: 20px;
+        text-align: center;
+
+        color: rgb(51, 51, 51);
+      }
+      
+      input[type="text"] {
+        font-size: 18px;
+        padding: 10px;
+        border: 2px solid #007fff;
+        width: 60%;
+        margin: 20px auto;
+    }
+
+      button {
+        background-color: #175ff0;
+       color: #fff;
+       padding: 10px 20px;
+       border: 0;
+       cursor: pointer;
+       margin-top: 20px;
+       display: block;
+       border-radius: 20px;
+       width: 10%;
+       margin: 0 auto;
+       display: block;
+      
+      }
+      
+      
+</style>
+
+</html>
+
